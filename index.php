@@ -36,7 +36,7 @@
 
 <?php
 	# Check if json.txt file needs to be generated
-	if(!file_exists("json.txt"))
+	if(!file_exists("json.txt") || filesize("json.txt") == 0)
 	{
 		//Generate the json.txt file
 		system("php generate.php");
