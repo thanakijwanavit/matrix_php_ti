@@ -31,6 +31,14 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+# Important System Environment Variables
+SCRIPTS=/etc/profile.d/*.sh
+
+for f in $SCRIPTS
+do
+    source $f
+done
+
 mkdir -p tmp
 mkdir -p lock
 
