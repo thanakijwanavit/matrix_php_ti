@@ -1,0 +1,161 @@
+USB connection to DLPC350 now open
+Var Screen Info
+ Display Width    = 912
+ Display Height   = 1140
+ Bits Per Pixel   = 32
+ Pixel Clk        = 13333
+ FrameBuffer size = 4158720
+spi mode: 1
+bits per word: 8
+max speed: 1500000 Hz (1500 KHz)
+Image FileSize = 3119178
+Image Width = 1824
+Image Height = 570
+Image BitDepth = 24
+Image PixelOffset = 138
+Image PaletteOffset = 138
+Image FileSize = 3119178
+Image Width = 1824
+Image Height = 570
+Image BitDepth = 24
+Image PixelOffset = 138
+Image PaletteOffset = 138
+Image FileSize = 3119178
+Image Width = 1824
+Image Height = 570
+Image BitDepth = 24
+Image PixelOffset = 138
+Image PaletteOffset = 138
+Image FileSize = 3119178
+Image Width = 1824
+Image Height = 570
+Image BitDepth = 24
+Image PixelOffset = 138
+Image PaletteOffset = 138
+Image FileSize = 3119178
+Image Width = 1824
+Image Height = 570
+Image BitDepth = 24
+Image PixelOffset = 138
+Image PaletteOffset = 138
+USB connection to DLPC350 now open
+Var Screen Info
+ Display Width    = 912
+ Display Height   = 1140
+ Bits Per Pixel   = 32
+ Pixel Clk        = 13333
+ FrameBuffer size = 4158720
+Input file name: ref_readings.txt
+spi mode: 1
+bits per word: 8
+max speed: 1500000 Hz (1500 KHz)
+
+
+********DLP NIRSCAN BEGIN [000]*******************
+
+num_images = 5 frames_per_image = 2
+Mean black level = 1661
+Values read from ADC captured in ref_readings_00.txt
+
+
+********DLP NIRSCAN END*******************
+
+
+
+********DLP NIRSCAN BEGIN [001]*******************
+
+num_images = 5 frames_per_image = 2
+Mean black level = 1652
+Values read from ADC captured in ref_readings_01.txt
+
+
+********DLP NIRSCAN END*******************
+
+
+
+********DLP NIRSCAN BEGIN [002]*******************
+
+num_images = 5 frames_per_image = 2
+Mean black level = 1659
+Values read from ADC captured in ref_readings_02.txt
+
+
+********DLP NIRSCAN END*******************
+
+
+
+********DLP NIRSCAN BEGIN [003]*******************
+
+num_images = 5 frames_per_image = 2
+Mean black level = 1656
+Values read from ADC captured in ref_readings_03.txt
+
+
+********DLP NIRSCAN END*******************
+
+
+
+********DLP NIRSCAN BEGIN [004]*******************
+
+num_images = 5 frames_per_image = 2
+Mean black level = 1654
+Values read from ADC captured in ref_readings_04.txt
+
+
+********DLP NIRSCAN END*******************
+
+
+
+********DLP NIRSCAN BEGIN [005]*******************
+
+num_images = 5 frames_per_image = 2
+Mean black level = 1659
+Values read from ADC captured in ref_readings_05.txt
+
+
+********DLP NIRSCAN END*******************
+
+
+
+********DLP NIRSCAN BEGIN [006]*******************
+
+num_images = 5 frames_per_image = 2
+Mean black level = 1655
+Values read from ADC captured in ref_readings_06.txt
+
+
+********DLP NIRSCAN END*******************
+
+
+
+********DLP NIRSCAN BEGIN [007]*******************
+
+num_images = 5 frames_per_image = 2
+Mean black level = 1655
+Values read from ADC captured in ref_readings_07.txt
+
+
+********DLP NIRSCAN END*******************
+
+
+
+********DLP NIRSCAN BEGIN [008]*******************
+
+num_images = 5 frames_per_image = 2
+Mean black level = 1657
+Values read from ADC captured in ref_readings_08.txt
+
+
+********DLP NIRSCAN END*******************
+
+
+
+********DLP NIRSCAN BEGIN [009]*******************
+
+num_images = 5 frames_per_image = 2
+Mean black level = 1652
+Values read from ADC captured in ref_readings_09.txt
+
+
+********DLP NIRSCAN END*******************
+

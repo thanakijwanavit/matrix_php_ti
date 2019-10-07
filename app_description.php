@@ -74,7 +74,7 @@ $enable_main_menu_link = true;
 	}
 
 	$app_title = $found_app["Name"];
-
+	$appTitle = $found_app["Name"];
 	$link =  "run_script.php?&submenu=".urlencode($submenu)."&app=".urlencode($app_title);
 ?>
 	<div id = "descrip_text">
@@ -88,7 +88,10 @@ $enable_main_menu_link = true;
 				After clicking run, look at the display device connected to the embedded system to see and/or interact with the application
 		</div>
 		<div id = "run_application" style= "text-align:center;">
+			<?php if($appTitle!="Perform Scan"&&$appTitle!="Custom Scan"&&$appTitle!="Quick Scan"&&$appTitle!="Information"&&$appTitle!="Compare Scan"&&$appTitle!="Perform Calibration") : ?>
 			<a href = "<?php echo $link;?>"><img id = "run_img" src= "images/run-icon.png"></a>
+			<?php endif; ?>
+				
 		</div>
 		<div>
 			<?php echo $description; ?>
@@ -102,6 +105,7 @@ $enable_main_menu_link = true;
 		else
 			echo "var isgraphicalApp = false;";
 	?>
+	
 	
 	if(isgraphicalApp == true)
 	{

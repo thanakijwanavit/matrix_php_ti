@@ -55,23 +55,26 @@ $enable_main_menu_link = isset($enable_main_menu_link) == true ? $enable_main_me
 
 <table id = "menubar" width = "100%" style = "margin-bottom:10px;">
 	<tr>
-		<td  align = "left" >
+		<td  align = "left" id = "banner">
 			<?php 
-				$link = "submenu.php?submenu=".$submenu."&page=".$previous_page;
-				$css_string = ($enable_previous_link == false) ? "hide_link" : "";
+				echo "<a href = \"\" onclick='window.open(\"http://www.ti.com\")'><img id= 'logo_img' src='images/TX-instruments-logo.png'></a>";
+				//$link = "submenu.php?submenu=".$submenu."&page=".$previous_page;
+				//$css_string = ($enable_previous_link == false) ? "hide_link" : "";
 
-				echo "<a href = '$link' class = 'previous_arrow $css_string' ><img id = 'previous_arrow_img' src= 'images/left-arrow-icon.png'></a>";
+				//echo "<a href = '$link' class = 'previous_arrow $css_string' ><img id = 'previous_arrow_img' src= 'images/left-arrow-icon.png'></a>";
 
 				//Added these two html elements so that each side will be even
-				echo "<a href = '#'  class = 'hide_link'><img id = 'exit_button_img' src= 'images/multi-icon.png'></a>";
-				echo "<a href = '#'  class = 'hide_link'><img id = 'next_arrow_img' src= 'images/right-arrow-icon.png'></a>";
+				//echo "<a href = '#'  class = 'hide_link'><img id = 'exit_button_img' src= 'images/multi-icon.png'></a>";
+				//echo "<a href = '#'  class = 'hide_link'><img id = 'next_arrow_img' src= 'images/right-arrow-icon.png'></a>";
 			?>
 
 		</td>
 		<td  align = "center" id = "banner" >
 			<?php  
-				echo "<img id = 'logo_img' src= 'images/tex.png'>";
-				echo $menu_title;
+				echo "<a href = \"\" onclick='window.open(\"http://www.ti.com/dlpnirscan\")'><img id= 'logo_img' src='images/DLP-NIRscan-logo.png'></a>";
+				//echo "<img id = 'logo_img' src= 'images/DLP-NIRscan-logo.png'>";
+				//Removing menu title for demo to fit logos. May need to add this back in somehow	
+				//echo $menu_title;
 			?>
 		</td>
 		<td  align = "right" >

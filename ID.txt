@@ -1,0 +1,1 @@
+Texas Instruments NIRscan SW Version : 1.0.0

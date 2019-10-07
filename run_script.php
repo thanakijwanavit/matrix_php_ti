@@ -115,7 +115,6 @@ $menu_title = $found_app["Name"];
 	
 		//This is a fix for IE browsers. IE likes to cache Ajax results. Therefore, adding a random string will prevent the browser from caching the Ajax request. 
 		var uri = "tmp/"+uri_link+".txt?rand="+Math.round((Math.random()*2356))+Math.round((Math.random()*4321))+Math.round((Math.random()*3961));
-	
 		$.get(uri, function(data) 
 		{
 			fail_count = 0;
@@ -134,6 +133,44 @@ $menu_title = $found_app["Name"];
 				//with the program's output. This prevents some flickering problems that occur in some GUI applications even if the HTML container is being passed no information.
 				if($found_app["ProgramType"]!="gui"){ ?>
 				$('#container').html("<pre>"+data+"</pre>");
+		//In case of perform scan, Add code to get the readings.txt file, parse it and draw the graph in a canvas
+		//<?php if($found_app["Name"] == "Perform Scan"){ ?>
+				$("#run_application").hide();
+				if(data.indexOf("readings.txt") != -1)
+				{
+				uri = "readings.txt";
+				$.get(uri, function(readings) 
+				{
+				readings = jQuery.trim(readings);
+				$('#container').append("<button type=\"button\" id=\"saveOption_button\" onclick=\"save_scan()\">Save Scan Result</button><br><br>");
+				$('#container').append("<canvas id=\"spectrumcanvas\" width=\"1000\" height=\"500\" </canvas>");
+				$('#container').append("<label id=\"label1\" style=\"font-size: 12pt;width:200px;float:left;display:none;\"><br>File name : </label> <br>");
+				$('#container').append("<input type=\"text\" id=\"scanname\" name=\"inp1\" size=\"50\" style=\"display:none;\"><br><br>");
+				$('#container').append("<button type=\"button\" id=\"save_button\" style=\"display:none;\" onclick=\"save_scan_file()\">Save</button><br><br>");
+				var c=document.getElementById("spectrumcanvas");
+				var ctx=c.getContext("2d");
+					
+				ctx.style="border:1px solid #c3c3c3;"
+				ctx.fillStyle="#FFFFFF";
+
+				readings=readings.split("\n");
+				var adc_val;
+				var x=0;
+				while(readings.length > 0)
+				{
+					adc_val = readings.shift();
+					if(readings.length % 2)
+						ctx.fillStyle="#FFFFFF"
+					else
+						ctx.fillStyle="#FF0000"
+					ctx.fillRect(x,500-parseInt(adc_val,16)*500/16777216, 5, parseInt(adc_val,16)*500/16777216);
+					x+=5;
+				}
+				})
+				}
+
+		//<?php } ?>
+
 				$('#container').scrollTop(document.getElementById("container").scrollHeight);		
 			<?php } ?>
 
@@ -151,6 +188,7 @@ $menu_title = $found_app["Name"];
 				setTimeout("update()",1000);
 
 		})
+
 		//If a file cant be read or some other error related to trying to retrieve this file then JQuery executes the error function.
 		//This sometimes occurs when the browser tries to read the output file before output file is even created. 
 		.error(function() 
@@ -177,6 +215,33 @@ $menu_title = $found_app["Name"];
 	
 	//Wait 500ms before trying to read the application output
 	setTimeout("update()",500);
+
+	function save_scan()
+	{
+		document.getElementById("spectrumcanvas").style.display='none';
+		document.getElementById("label1").style.display='block';
+		document.getElementById("scanname").style.display='block';
+		document.getElementById("save_button").style.display='block';
+		document.getElementById("saveOption_button").style.display='none';
+		
+	}
+
+	function save_scan_file()
+	{
+		if(document.getElementById("scanname").value=='')
+		{ alert("Please enter file name!");
+		}
+		else
+		{
+		str= document.getElementById("scanname").value;
+		$.get('readings.txt', function(data) {
+ 		   var myvar = data;
+		$.post("save_scan.php", {a: str, b:myvar}, function(data){                                          
+ 		 $('#somediv').html(data);
+		});
+		});
+		}
+	}
 </script>
 <?php }if($currently_locked==false && $found_app["ProgramType"]=="web"){ ?>
 <?php include "menubar.php"; ?>

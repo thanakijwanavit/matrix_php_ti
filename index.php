@@ -36,7 +36,7 @@
 
 <?php
 	# Check if json.txt file needs to be generated
-	if(!file_exists("json.txt") || filesize("json.txt") == 0)
+	if(!file_exists("json.txt"))
 	{
 		//Generate the json.txt file
 		system("php generate.php");
@@ -134,11 +134,7 @@ $(document).ready(function()
 
 	if(client_is_host==false)
 	{
-		var r=confirm("Does your target system have an attached display device?\nClick Ok and Remote Matrix will assume that a proper display device is attached to your target system.\nClick Cancel and Remote Matrix will assume that you do not have a display device attached to your target system.");
-		if (r==true)
 			has_graphics = true;
-		else
-			has_graphics = false;
 	}
 
 	$.get(uri, function(data) 

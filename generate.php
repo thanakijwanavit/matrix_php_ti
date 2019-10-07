@@ -73,6 +73,10 @@ for($x = 0;$x<count($contents)&&strlen($contents[$x])>0;$x++)
 	
 	$top["Name"] = get_contents("Name",$dotdesktop);
 
+	$showinMatrix = get_contents("showInMatrix",$dotdesktop);
+	if($showinMatrix == 0)
+	continue;
+
 	if(get_contents("X-MATRIX-DisplayPriority",$dotdesktop)!=-1)
 		$top["Order"] = get_contents("X-MATRIX-DisplayPriority",$dotdesktop);
 	else

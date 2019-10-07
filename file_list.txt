@@ -1,0 +1,9 @@
+scan1.txt
+scan10.txt
+scan12.txt
+scan14.txt
+scan5.txt
+scan6.txt
+scan7.txt
+scan8.txt
+scan9.txt
